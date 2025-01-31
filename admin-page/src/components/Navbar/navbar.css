@@ -1,0 +1,51 @@
+.navbar {
+    height: 10%;
+    width: 100%;
+    background-color: #0d285b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    z-index: 10;
+  }
+  
+  .restaurant-name {
+    font-size: 1.8rem;
+    color: rgb(121, 110, 228);
+    font-weight: 500;
+  }
+  .hover-container {
+    cursor: pointer;
+    position: relative; /* To center content better */
+    top: 8px;
+  }
+  
+  .rest-icon {
+    height: 40px;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in */
+    margin-right: 2rem
+  }
+  
+  .add-rest {
+    padding: 13px 15px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    background-color: rgb(212, 235, 255);
+    cursor: pointer;
+    animation: slowIn 0.3s ease-in-out; /* Smooth appearance */
+  }
+  
+  /* Optional: fade-in animation */
+  @keyframes slowIn {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

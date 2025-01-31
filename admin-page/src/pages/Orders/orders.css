@@ -1,0 +1,124 @@
+/* orders.css */
+
+/* Container Styling */
+.orders-container {
+  width: 80vw;
+  margin: 2rem 10vw;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Light blue background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container h2 {
+  text-align: center;
+  color: #0056b3; /* Deep blue */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #b3d9ff; /* Soft blue border */
+  padding-bottom: 0.5rem;
+}
+
+/* Order Block */
+.order-block {
+  background-color: #ffffff;
+  border: 1px solid #b3d9ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #b3d9ff;
+  padding-bottom: 1rem;
+}
+
+.order-header h3 {
+  margin: 0;
+  color: #004085; /* Dark blue */
+  font-size: 1.4rem;
+}
+
+/* Status Dropdown */
+.status-container {
+  margin-left: auto;
+}
+
+.status {
+  width: 180px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #66b2ff;
+  border-radius: 8px;
+  background-color: #cce5ff; /* Light blue */
+  color: #004085;
+  cursor: pointer;
+}
+
+.status:focus {
+  outline: none;
+  border-color: #0062cc; /* Darker blue */
+}
+
+/* Customer Info Section */
+.customer-info {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f0f8ff; /* Light blue-gray */
+  border-radius: 8px;
+  border: 1px solid #b3d9ff;
+}
+
+.customer-info p {
+  margin: 0.5rem 0;
+  color: #004085;
+  font-size: 1rem;
+}
+
+/* Food Item List */
+.food-item-list {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #b3d9ff;
+}
+
+.order-food-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px dashed #66b2ff;
+}
+
+.order-food-item:last-child {
+  border-bottom: none;
+}
+
+/* Food Item Details */
+.food-name {
+  flex: 2;
+  font-weight: bold;
+  color: #004085;
+}
+
+.food-quantity,
+.food-price {
+  flex: 1;
+  text-align: center;
+  color: #0062cc;
+}
+
+/* Total Price Section */
+.total-price {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  color: #003366; /* Dark navy blue */
+}

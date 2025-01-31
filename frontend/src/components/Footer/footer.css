@@ -1,0 +1,45 @@
+.footer {
+  padding: 5vh 10vw;
+  background-color: rgb(47, 45, 45);
+  color: aliceblue;
+  margin-top: 20vh;
+}
+
+.footer-logo {
+  width: 150px;
+}
+
+.footer ul {
+  list-style-type: none;
+  line-height: 1.8;
+  text-indent: 5px;
+}
+
+.footer h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 7vw;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 3vh;
+}
+
+.footer .social-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 5vh;
+}

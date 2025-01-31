@@ -1,0 +1,131 @@
+/* General styles */
+.add-item {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e6f7ff; /* Light blue background */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 139, 0.1); /* Subtle navy shadow */
+  position: absolute;
+  right: 50%;
+  top: 18%;
+  animation: fadeIn 0.5s;
+}
+
+.add-item p {
+  margin: 8px 0 5px;
+  font-weight: bold;
+  color: #003366; /* Dark navy blue text */
+}
+
+/* Dollar symbol for price input */
+.dollar-symbol {
+  position: absolute;
+  left: 13px;
+  top: 9.5px;
+  font-size: 16px;
+  color: #0056b3; /* Blue tone */
+  pointer-events: none;
+  animation: fadeIn 0.25s;
+}
+
+.price-input {
+  display: flex;
+  position: relative;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+textarea,
+input[list="category"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #b3d9ff; /* Light blue border */
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f0f8ff; /* Very light blue */
+  color: #003366;
+}
+
+input[type="number"] {
+  text-indent: 14px;
+}
+
+/* Image upload section */
+.image-upload {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-upload img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px dashed #66b2ff; /* Bright blue dashed border */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.image-upload img:hover {
+  border-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Multi-field layout */
+.multifield {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.category,
+.price {
+  width: 48%;
+}
+
+/* Text area */
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Buttons */
+form .button-additem {
+  width: 48%;
+  padding: 10px;
+  margin: 5px 1%;
+  background-color: #007bff; /* Vibrant blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="reset"] {
+  background-color: #ff4d4d; /* Red reset button */
+}
+
+.button-additem:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button[type="reset"]:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .multifield {
+    flex-direction: column;
+  }
+
+  .category,
+  .price,
+  .button-additem {
+    width: 100%;
+  }
+}

@@ -1,0 +1,61 @@
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  overflow-x: scroll;
+  margin-top: 40px;
+}
+
+.explore-menu {
+  margin-top: 25px;
+}
+
+.explore-menu .menu-title {
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.explore-menu .menu-disc {
+  font-size: 1.05rem;
+  color: rgb(93, 90, 90);
+}
+
+.menu-container::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-selector {
+  cursor: pointer;
+}
+
+.menu-image img {
+  width: max(8vw, 130px);
+  border-radius: 44px;
+}
+
+.menu-name {
+  text-align: center;
+  color: grey;
+  font-weight: 450;
+}
+
+.active-menu .menu-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid tomato;
+  border-radius: 48px;
+  padding: 2px;
+}
+
+.active-menu .menu-name {
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .menu-disc {
+    display: none;
+  }
+}

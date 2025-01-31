@@ -1,0 +1,22 @@
+.price-input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dollar-symbol {
+  position: relative;
+  left: 23px; /* Adjust based on padding */
+  font-size: 16px;
+  color: #555;
+  pointer-events: none; /* Prevent interaction with the dollar symbol */
+}
+
+.price-input-container input {
+  padding-left: 25px; /* Create space for the dollar symbol */
+  font-size: 16px;
+  width: 250px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}

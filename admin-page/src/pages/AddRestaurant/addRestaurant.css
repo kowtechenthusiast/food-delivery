@@ -1,0 +1,123 @@
+/* General form styles */
+form {
+  width: 50vw;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  background: linear-gradient(
+    to bottom right,
+    #e6f7ff,
+    #cceeff
+  ); /* Light blue gradient */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 139, 0.1); /* Soft navy shadow */
+  position: absolute;
+  top: 15%;
+  right: 50%;
+  transform: translateX(50%);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+form p {
+  margin: 8px 0 6px;
+  font-weight: bold;
+  color: #004085; /* Dark navy text */
+}
+
+/* Image upload section */
+.image-upload {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.image-upload img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px dashed #66b2ff; /* Brighter blue dashed border */
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.image-upload img:hover {
+  border-color: #0056b3; /* Darker blue */
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"],
+textarea,
+input[list="category"],
+input[type="time"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #80d4ff; /* Soft blue border */
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f0f8ff; /* Very light blue background */
+  color: #003366; /* Deep blue text */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="time"]:focus {
+  border-color: #007bb5; /* Brighter blue on focus */
+  outline: none;
+}
+
+/* Time input layout */
+.time {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.open-time,
+.close-time {
+  width: 48%;
+}
+
+/* Buttons */
+.buttons button {
+  width: 48%;
+  padding: 12px;
+  margin: 5px 1%;
+  background-color: #007bff; /* Bright blue button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="reset"] {
+  background-color: #ff6f61; /* Soft red button */
+}
+
+.buttons button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+button[type="reset"]:hover {
+  background-color: #d93025; /* Darker red */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .time {
+    flex-direction: column;
+  }
+
+  .open-time,
+  .close-time,
+  .buttons button {
+    width: 100%;
+  }
+}

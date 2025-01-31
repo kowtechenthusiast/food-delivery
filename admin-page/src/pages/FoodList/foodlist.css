@@ -1,0 +1,108 @@
+/* General food list container */
+.food-list {
+  display: grid;
+  place-content: center;
+  width: 80vw;
+  background-color: #e6f7ff; /* Light blue background */
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  padding: 20px 10vw;
+  margin-bottom: 100px;
+  animation: fadeIn 0.5s;
+  position: relative;
+  right: 35%;
+  top: 3vh;
+  transform: translateX(50%);
+}
+
+/* Table styles */
+.food-list__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header */
+.food-list__header {
+  background-color: #007bff; /* Bright blue */
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.food-list__header-row {
+  border-bottom: 2px solid #0056b3; /* Darker blue for contrast */
+}
+
+/* Table rows */
+.food-list__row {
+  border-bottom: 1px solid #b3d9ff;
+  transition: background-color 0.3s ease;
+}
+
+.food-list__row:hover {
+  background-color: #cce5ff; /* Soft blue on hover */
+}
+
+/* Cell styles */
+.food-list__cell {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #003366; /* Dark navy blue */
+  vertical-align: middle;
+}
+
+/* Image cell */
+.food-list__image-cell {
+  text-align: center;
+}
+
+.food-list__image {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.delete-action {
+  width: 10rem;
+  text-align: center;
+  opacity: 0.1;
+  cursor: pointer;
+}
+
+.delete-action:hover {
+  opacity: 1;
+  background-color: rgba(170, 215, 245, 0.617);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .food-list__header,
+  .food-list__cell {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .food-list {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-list__table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .food-list__header,
+  .food-list__cell {
+    font-size: 10px;
+  }
+
+  .food-list__image {
+    width: 50px;
+    height: 50px;
+  }
+}

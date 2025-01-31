@@ -1,0 +1,106 @@
+.full-page-container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background: linear-gradient(#1e3d77, #112142);
+    padding-top: 15vh;
+    padding-right: 5vw;
+    position: relative;
+}
+
+.search-box {
+    width: 50%;
+    position: relative;
+}
+
+.search-submit {
+    width: max-content;
+    padding: 13px 25px;
+    margin-left: 1px;
+    text-align: center;
+    font-size: 27px;
+    border: none;
+    outline: none;
+    letter-spacing: 0.1rem; 
+    border-radius: 0px 8px 8px 0px;
+    background-color: rgba(123, 153, 214, 0.8);
+    color: white;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.search-box input[type="text"] {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    letter-spacing: 0.1rem; 
+    border-radius: 8px 0px 0px 8px;
+    background-color: rgba(123, 153, 214, 0.8);
+    color: white;
+}
+
+.search-box input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input[type="text"]:focus::placeholder {
+    color: rgba(255, 255, 255, 0.18);
+}
+
+.search-box input[type="text"]:hover {
+  background-color: rgba(123, 153, 214, 0.577);
+  outline: none;
+}
+
+.search-submit:hover {
+    background-color: #112142;
+}
+  
+  
+
+  
+  .custom-datalist {
+    position: absolute;
+    top: 100%; /* Position dropdown below the input field */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-height: 200px;
+    overflow-y: auto;
+    /* background-color: #1a3569; */
+    color: rgb(195, 228, 255);
+    /* border: 1px solid #ccc;
+    border-radius: 10px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    z-index: 20; /* Ensure dropdown is above other elements */
+  }
+  
+  .custom-datalist::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .custom-datalist ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .custom-datalist li {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #1a3669d5;
+  }
+  
+  .custom-datalist li:hover {
+    background-color: #1a366991; /* Highlight on hover */
+    border-radius: 10px;
+
+  }
+  

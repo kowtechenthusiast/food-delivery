@@ -1,0 +1,49 @@
+.app-download {
+  height: max-content;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  background-color: #161a1d;
+  display: flex;
+  padding-left: 100px;
+  padding-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-download h3 {
+  font-size: 3.3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.app-download p {
+  font-size: 1.3rem;
+  color: rgb(118, 117, 117);
+}
+
+.app-download span {
+  color: tomato;
+  font-weight: 700;
+}
+
+.store-logo {
+  display: flex;
+  gap: 4vw;
+  justify-content: start;
+  align-items: center;
+  margin: 3vh 0px;
+}
+
+.store-logo img {
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.store-logo img:active {
+  transform: scale(0.95);
+}
+
+.app-right {
+  width: 50%;
+  height: 100%;
+}
