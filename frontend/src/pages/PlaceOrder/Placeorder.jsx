@@ -14,9 +14,7 @@ export default function Placeorder() {
     setDelivery_charge,
     delivery_charge,
   } = useContext(StoredContext);
-  const stripePromise = loadStripe(
-    "pk_test_51QTRWDANLnHBARIdmNSPXuwy6Oka6SL0UGE7Uv8Q1ChmmLziCn1FZ5bFFrp6k2CQugiOhzpMB7glEdFcv1ZZX7sb00qx62x20t"
-  );
+  const stripePromise = loadStripe("pk_test_XXXXXXXXXXXXXXXXXX");
   const [isLoading, setIsLoading] = useState(false);
   const [showCustom, setShow] = useState(false);
   const [showLocationPicker, setShowLocationPicker] = useState(false);

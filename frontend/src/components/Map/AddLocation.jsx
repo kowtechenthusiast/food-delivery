@@ -45,8 +45,7 @@ const AddLocation = ({ onLocationChange }) => {
     if (mapRef.current) {
       const mapboxInstance = mapRef.current.getMap();
       const geocoder = new MapBoxGeocoder({
-        accessToken:
-          "pk.eyJ1IjoiY2FwdGFpbi1raW5nIiwiYSI6ImNtNGU2eTc1azBzNzgya3M4NTVhZjRxNmIifQ.QRJL0zl8GiOg0yOx4qGcCA",
+        accessToken: "pk.XXXXXXXXXXXXXX.XXXXXXXX",
         marker: false,
         mapboxgl,
       });
@@ -101,7 +100,7 @@ const AddLocation = ({ onLocationChange }) => {
     >
       <ReactMapGL
         ref={mapRef}
-        mapboxAccessToken="pk.eyJ1IjoiY2FwdGFpbi1raW5nIiwiYSI6ImNtNGU2eTc1azBzNzgya3M4NTVhZjRxNmIifQ.QRJL0zl8GiOg0yOx4qGcCA"
+        mapboxAccessToken="pk.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXX"
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         mapStyle="mapbox://styles/mapbox/streets-v11"

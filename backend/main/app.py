@@ -227,22 +227,22 @@ def filterRestaurant():
     json_list=[restaurant.to_json() for restaurant in list]
     return jsonify({"restaurant_list": json_list})
 
-# logging.basicConfig(level=logging.INFO)
-# logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-# @app.route('/api/ipapi', methods=['GET'])
-# def proxy_ipapi():
-#     try:
-#         response = requests.get("https://ipapi.co/json", timeout=10)
-#         response.raise_for_status()
-#         logger.info(f"Response Headers: {response.headers}")  # Log headers
-#         return jsonify(response.json()), response.status_code
-#     except requests.exceptions.HTTPError as http_err:
-#         logger.error(f"HTTP error occurred: {http_err}")
-#         return jsonify({"error": "HTTP error occurred while fetching location data"}), response.status_code
-#     except requests.exceptions.RequestException as e:
-#         logger.error(f"Error fetching data from ipapi: {e}")
-#         return jsonify({"error": "Unable to fetch location data"}), 500
+@app.route('/api/ipapi', methods=['GET'])
+def proxy_ipapi():
+    try:
+        response = requests.get("https://ipapi.co/json", timeout=10)
+        response.raise_for_status()
+        logger.info(f"Response Headers: {response.headers}")  # Log headers
+        return jsonify(response.json()), response.status_code
+    except requests.exceptions.HTTPError as http_err:
+        logger.error(f"HTTP error occurred: {http_err}")
+        return jsonify({"error": "HTTP error occurred while fetching location data"}), response.status_code
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error fetching data from ipapi: {e}")
+        return jsonify({"error": "Unable to fetch location data"}), 500
 
 @app.route('/api/create-checkout-session', methods=['POST'])
 @login_required
@@ -293,8 +293,8 @@ def create_checkout_session():
             shipping_options=shipping_options,
             automatic_tax={'enabled': tax_enabled},
         )
-        # app.logger.info(f"Stripe Session Created: {session}")
-        # app.logger.info(f"Received cartItem: {cartItem}")
+        app.logger.info(f"Stripe Session Created: {session}")
+        app.logger.info(f"Received cartItem: {cartItem}")
 
         return jsonify({'id': session.id})
 
@@ -468,7 +468,7 @@ def stripe_webhook():
     sig_header = request.headers.get('Stripe-Signature')
     
     try:
-        event = stripe.Webhook.construct_event(payload, sig_header, 'whsec_8IQXKGssCA8f6sTfviFFodBEAOj4mKyR')
+        event = stripe.Webhook.construct_event(payload, sig_header, 'whsec_XXXXXXXXXXXXXXXXXXXXXXX')
 
     except ValueError as e:
         return 'Invalid payload', 400
