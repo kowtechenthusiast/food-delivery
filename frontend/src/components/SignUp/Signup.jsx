@@ -46,8 +46,13 @@ export default function Signup({ setShow }) {
         setUserState("registered");
         toast.success("Account created successfully!");
       } else {
+        const userResponse = await fetch(`${VITE_API_BASE_URL}/get-user`, {
+          method: "GET",
+          credentials: "include",
+        });
+        const userData = await userResponse.json();
+        setUser(userData);
         toast.success(`Welcome back ${signupData.name}`);
-        window.location.reload();
         setAuthentication(true);
         setShow(false);
       }
