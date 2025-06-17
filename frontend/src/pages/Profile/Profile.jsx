@@ -1,6 +1,6 @@
 import { assets } from "../../assets/assets";
 import React, { useContext, useEffect, useState } from "react";
-import "./Profile.css";
+import "./profile.css";
 import { StoredContext } from "../../context";
 import AddLocation from "../../components/Map/AddLocation";
 import { toast } from "react-toastify";
