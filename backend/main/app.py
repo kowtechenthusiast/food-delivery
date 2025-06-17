@@ -348,7 +348,6 @@ def deleteCompletedOrders():
 
 
 @app.route('/api/get-my-order',methods=['POST'])
-@login_required
 def getMyOrders():
     email=request.json['email']
     # if not email:
@@ -430,7 +429,6 @@ def changeStatus():
     return jsonify({'messagge': "status changed successfully"}), 200
 
 @app.route('/api/order', methods=['POST'])
-@login_required
 def create_order():
     data = request.json['order']
     new_order = Orders(
