@@ -6,8 +6,13 @@ import { toast } from "react-toastify";
 const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Signup({ setShow }) {
-  const { userState, setUserState, isAuthenticated, setAuthentication, user } =
-    useContext(StoredContext);
+  const {
+    userState,
+    setUserState,
+    isAuthenticated,
+    setAuthentication,
+    setUser,
+  } = useContext(StoredContext);
   const [signupData, setData] = useState({
     name: "",
     email: "",
@@ -40,7 +45,7 @@ export default function Signup({ setShow }) {
         toast.success("Account created successfully!");
       } else {
         toast.success(`Welcome back ${signupData.name}`);
-        window.location.reload();
+        setUser(result.name);
         setAuthentication(true);
         setShow(false);
       }
