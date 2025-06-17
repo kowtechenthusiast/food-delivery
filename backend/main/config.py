@@ -16,6 +16,9 @@ CORS(app, supports_credentials=True, origins=[
     os.getenv("ADMIN_HOST")
 ])
 
+app.config['SESSION_COOKIE_SECURE'] = True  # For HTTPS
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'  # Needed for cross-site cookies
+app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

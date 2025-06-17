@@ -47,7 +47,7 @@ export default function Signup({ setShow }) {
         toast.success("Account created successfully!");
       } else {
         toast.success(`Welcome back ${signupData.name}`);
-        setUser({ ...user, dummy: 1 });
+        window.location.reload();
         setAuthentication(true);
         setShow(false);
       }
