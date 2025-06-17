@@ -35,9 +35,10 @@ export default function Signup({ setShow }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signupData),
+      credentials: "include",
     });
 
-    const result = await response.json(); // Uncomment to get response
+    const result = await response.json();
 
     if (response.ok) {
       if (userState === "newuser") {
@@ -45,7 +46,7 @@ export default function Signup({ setShow }) {
         toast.success("Account created successfully!");
       } else {
         toast.success(`Welcome back ${signupData.name}`);
-        setUser(result.name);
+        window.location.reload();
         setAuthentication(true);
         setShow(false);
       }

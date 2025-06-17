@@ -25,7 +25,7 @@ const App = () => {
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/get-user`, {
         method: "GET",
-        credentials: "include", // Include credentials (cookies)
+        credentials: "include",
       });
       if (response.ok) {
         const userData = await response.json();

@@ -55,14 +55,13 @@ def login():
 
     user = User.query.filter_by(email=email).first()
 
-    session['curr_user']=user.to_json_user()
-    session.permanent=True
-    app.permanent_session_lifetime=timedelta(days=1)
-
     if user and check_password_hash(user.password, password):
-        return jsonify({"message": "Welcome back! You are logged in successfully", 'name':user.name}), 200
+        session['curr_user'] = user.to_json_user()
+        session.permanent = True
+        app.permanent_session_lifetime = timedelta(days=1)
+        return jsonify(user.to_json_user()), 200
     else:
-        return jsonify({"error": "Invalid email or password"}), 401  # Unauthorized status
+        return jsonify({"error": "Invalid email or password"}), 401
 
 
 @app.route('/api/get-user', methods=["GET"])
