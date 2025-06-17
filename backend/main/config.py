@@ -23,3 +23,4 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
 db = SQLAlchemy(app)
+

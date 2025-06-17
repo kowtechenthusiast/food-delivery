@@ -1,4 +1,4 @@
-from config import db
+from .config import db
 from base64 import b64encode
 
 

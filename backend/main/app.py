@@ -1,8 +1,8 @@
 import traceback
 from flask import request, jsonify, session
 import requests
-from main.config import app, db
-from main.models import User, Dish, Restaurant, Orders, Order_item
+from .config import app, db
+from .models import User, Dish, Restaurant, Orders, Order_item
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
 import stripe
