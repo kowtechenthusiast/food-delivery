@@ -11,6 +11,7 @@ export default function Signup({ setShow }) {
     setUserState,
     isAuthenticated,
     setAuthentication,
+    user,
     setUser,
   } = useContext(StoredContext);
   const [signupData, setData] = useState({
@@ -46,7 +47,7 @@ export default function Signup({ setShow }) {
         toast.success("Account created successfully!");
       } else {
         toast.success(`Welcome back ${signupData.name}`);
-        window.location.reload();
+        setUser({ ...user, dummy: 1 });
         setAuthentication(true);
         setShow(false);
       }
