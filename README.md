@@ -47,12 +47,11 @@ A modern, responsive **Food Delivery Web Application** built with cutting-edge t
 ----
 ## 🚀 Live Demo & Deployment
 
-Explore the live versions of each part of the application:
+✨ Explore the live versions of each part of the application:
 
 | 🧩 Module       | 🔗 Live Link                                                |
 |----------------|-------------------------------------------------------------|
-| 🌐 Frontend     | [swiftgo-client.netlify.app](https://swiftgo-client.netlify.app/)       |
-| 🛠️ Admin Panel  | [swiftgo-admin.netlify.app](https://swiftgo-admin.netlify.app/)         |
-| 🔙 Backend API  | [food-delivery-nsx1.onrender.com](https://food-delivery-nsx1.onrender.com) |
+| 🌐 Frontend     | [netlify-client-app](https://swiftgo-client.netlify.app/)       |
+| 🛠️ Admin Panel  | [netlify-admin-app](https://swiftgo-admin.netlify.app/)         |
+| 🔙 Backend API  | [render-flask-backend](https://food-delivery-nsx1.onrender.com) |
 
-✨ Click on any module to open the live project in a new tab.
