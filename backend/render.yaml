@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: food-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn main.app:app
