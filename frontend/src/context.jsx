@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const StoredContext = createContext(null);
 
@@ -18,7 +19,7 @@ const ContextProvider = (props) => {
   useEffect(() => {
     async function getList() {
       try {
-        const response = await fetch("/api/get-food-list", {
+        const response = await fetch(`${VITE_API_BASE_URL}/get-food-list`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(curr_rest),
@@ -37,7 +38,7 @@ const ContextProvider = (props) => {
   useEffect(() => {
     async function getAllFoodList() {
       try {
-        const response = await fetch("/api/food-list", {
+        const response = await fetch(`${VITE_API_BASE_URL}/food-list`, {
           method: "GET",
         });
         const data = await response.json();
@@ -51,7 +52,7 @@ const ContextProvider = (props) => {
 
   useEffect(() => {
     async function getList() {
-      const response = await fetch("/api/restaurant-list", {
+      const response = await fetch(`${VITE_API_BASE_URL}/restaurant-list`, {
         method: "GET",
       });
       const data = await response.json();
@@ -63,7 +64,7 @@ const ContextProvider = (props) => {
 
   const logout = async () => {
     try {
-      const response = await fetch("/api/logout", {
+      const response = await fetch(`${VITE_API_BASE_URL}/logout`, {
         method: "POST",
         credentials: "include", // Ensures cookies (session) are sent with the request
       });

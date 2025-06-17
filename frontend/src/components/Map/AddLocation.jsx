@@ -9,6 +9,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
 import MapBoxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const VITE_MAP_BOX_ACCESS_TOKEN = import.meta.env.VITE_MAP_BOX_ACCESS_TOKEN;
 
 const AddLocation = ({ onLocationChange }) => {
   const [location, setLocation] = useState({ lng: 0, lat: 0 });
@@ -21,7 +23,7 @@ const AddLocation = ({ onLocationChange }) => {
 
   useEffect(() => {
     if (!location.lng && !location.lat) {
-      fetch("http://localhost:5000/api/ipapi")
+      fetch(`${VITE_API_BASE_URL}/ipapi`)
         .then((response) => {
           if (!response.ok) throw new Error("Failed to fetch location data");
           return response.json();
@@ -45,7 +47,7 @@ const AddLocation = ({ onLocationChange }) => {
     if (mapRef.current) {
       const mapboxInstance = mapRef.current.getMap();
       const geocoder = new MapBoxGeocoder({
-        accessToken: "pk.XXXXXXXXXXXXXX.XXXXXXXX",
+        accessToken: VITE_MAP_BOX_ACCESS_TOKEN,
         marker: false,
         mapboxgl,
       });
@@ -93,14 +95,14 @@ const AddLocation = ({ onLocationChange }) => {
   return (
     <Box
       sx={{
-        height: 700,
-        width: 900,
+        height: 610,
+        width: 830,
         position: "relative",
       }}
     >
       <ReactMapGL
         ref={mapRef}
-        mapboxAccessToken="pk.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXX"
+        mapboxAccessToken={VITE_MAP_BOX_ACCESS_TOKEN}
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         mapStyle="mapbox://styles/mapbox/streets-v11"

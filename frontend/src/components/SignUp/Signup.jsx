@@ -3,6 +3,7 @@ import "./signup.css";
 import { assets } from "../../assets/assets";
 import { StoredContext } from "../../context";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Signup({ setShow }) {
   const { userState, setUserState, isAuthenticated, setAuthentication, user } =
@@ -25,7 +26,7 @@ export default function Signup({ setShow }) {
     e.preventDefault();
 
     const url = userState === "newuser" ? "signup" : "login";
-    const response = await fetch(`/api/${url}`, {
+    const response = await fetch(`${VITE_API_BASE_URL}/${url}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signupData),

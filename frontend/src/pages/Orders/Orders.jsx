@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./orders.css";
 import { assets } from "../../assets/assets";
 import { StoredContext } from "../../context";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);
@@ -11,10 +12,13 @@ export default function Orders() {
     const deletePendingOrdersAndFetch = async () => {
       try {
         // Delete pending orders
-        const deleteResponse = await fetch("/api/delete-pending-orders", {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-        });
+        const deleteResponse = await fetch(
+          `${VITE_API_BASE_URL}/delete-pending-orders`,
+          {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
 
         // if (!deleteResponse.ok) {
         //     const errorData = await deleteResponse.json();
@@ -24,7 +28,7 @@ export default function Orders() {
 
         // Fetch orders only if the deletion was successful
         if (user) {
-          const response = await fetch("/api/get-my-order", {
+          const response = await fetch(`${VITE_API_BASE_URL}/get-my-order`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: user.email }),

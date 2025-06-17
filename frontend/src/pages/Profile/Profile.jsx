@@ -4,6 +4,7 @@ import "./Profile.css";
 import { StoredContext } from "../../context";
 import AddLocation from "../../components/Map/AddLocation";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Profile = () => {
   const { user } = useContext(StoredContext);
@@ -117,7 +118,7 @@ const Profile = () => {
         formData.append("location", JSON.stringify(userData.location));
       }
 
-      const response = await fetch("/api/update-user", {
+      const response = await fetch(`${VITE_API_BASE_URL}/update-user`, {
         method: "POST",
         body: formData,
       });

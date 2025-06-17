@@ -4,7 +4,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { StoredContext } from "../../context";
 import { useState } from "react";
 import AddLocation from "../../components/Map/AddLocation";
-// import { Link } from "react-router-dom";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const VITE_STRIPE_PRIVATE_KEY = import.meta.env.VITE_STRIPE_PRIVATE_KEY;
 
 export default function Placeorder() {
   const {
@@ -14,7 +15,7 @@ export default function Placeorder() {
     setDelivery_charge,
     delivery_charge,
   } = useContext(StoredContext);
-  const stripePromise = loadStripe("pk_test_XXXXXXXXXXXXXXXXXX");
+  const stripePromise = loadStripe(VITE_STRIPE_PRIVATE_KEY);
   const [isLoading, setIsLoading] = useState(false);
   const [showCustom, setShow] = useState(false);
   const [showLocationPicker, setShowLocationPicker] = useState(false);
@@ -24,7 +25,7 @@ export default function Placeorder() {
   const handleCheckout = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const orderResponse = await fetch("/api/order", {
+    const orderResponse = await fetch(`${VITE_API_BASE_URL}/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -38,15 +39,18 @@ export default function Placeorder() {
 
     const order_id = data["order_id"];
 
-    const response = await fetch("/api/create-checkout-session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        items: cartItem,
-        order_id: order_id,
-        delivery_charge: delivery_charge,
-      }),
-    });
+    const response = await fetch(
+      `${VITE_API_BASE_URL}/create-checkout-session`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: cartItem,
+          order_id: order_id,
+          delivery_charge: delivery_charge,
+        }),
+      }
+    );
 
     const session = await response.json();
 

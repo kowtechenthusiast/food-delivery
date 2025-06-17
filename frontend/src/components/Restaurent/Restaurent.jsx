@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import "./restaurent.css";
 import { Link, useLocation } from "react-router-dom";
 import { StoredContext } from "../../context";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function Restaurent() {
   const { setCurrRest, setList, setMenuList, setLoading, setActive } =
     useContext(StoredContext);
@@ -22,7 +24,7 @@ function Restaurent() {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch("/api/restaurant-list", {
+      const response = await fetch(`${VITE_API_BASE_URL}/restaurant-list`, {
         method: "GET",
       });
 
@@ -30,7 +32,7 @@ function Restaurent() {
       setRestaurantData(data.restaurant_list);
     }
     async function getFilteredData() {
-      const response = await fetch("/api/filter-rest-list", {
+      const response = await fetch(`${VITE_API_BASE_URL}/filter-rest-list`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(filter),

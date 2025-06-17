@@ -13,6 +13,7 @@ import Restaurent from "./components/Restaurent/Restaurent";
 import Home from "./pages/Home/Home";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const App = () => {
   const location = useLocation();
@@ -22,7 +23,7 @@ const App = () => {
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await fetch("/api/get-user", {
+      const response = await fetch(`${VITE_API_BASE_URL}/get-user`, {
         method: "GET",
         credentials: "include", // Include credentials (cookies)
       });

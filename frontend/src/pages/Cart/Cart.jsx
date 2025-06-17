@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./cart.css";
 import { StoredContext } from "../../context";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Cart() {
   const {
@@ -15,7 +16,7 @@ export default function Cart() {
 
   useEffect(() => {
     async function fetchShipping() {
-      const response = await fetch("/api/calculate-shipping", {
+      const response = await fetch(`${VITE_API_BASE_URL}/calculate-shipping`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cartItem: cartItem }),
