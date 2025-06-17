@@ -29,6 +29,8 @@ const App = () => {
       });
       if (response.ok) {
         const userData = await response.json();
+        console.log("User data fetched successfully:", userData);
+
         setUser(userData);
         if (userData) setAuthentication(true);
       } else {

@@ -51,6 +51,7 @@ export default function Signup({ setShow }) {
           credentials: "include",
         });
         const userData = await userResponse.json();
+        console.log("User data fetched successfully:", userData);
         setUser(userData);
         toast.success(`Welcome back ${signupData.name}`);
         setAuthentication(true);

@@ -57,6 +57,7 @@ def login():
 
     if user and check_password_hash(user.password, password):
         session['curr_user'] = user.to_json_user()
+        print("User data0:", session.get('curr_user', None))  # Debugging line
         session.permanent = True
         app.permanent_session_lifetime = timedelta(days=1)
         return jsonify(user.to_json_user()), 200
@@ -68,6 +69,7 @@ def login():
 @login_required
 def get_current_user():
     user_data = session.get('curr_user', None)
+    print("User data1:", user_data)  # Debugging line
     if user_data:
         # Fetch the user from the database
         user = User.query.filter_by(email=user_data['email']).first()
@@ -84,9 +86,8 @@ def get_current_user():
                 "phone_no": user.phone_no,
                 "image": image_base64
             }
-
+            print("User data2:", user_data)  # Debugging line
             return jsonify(user_response), 200
-
     return jsonify({"message": "Unauthorized"}), 401
 
 
