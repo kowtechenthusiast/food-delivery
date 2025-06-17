@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import "./foodlist.css";
 import { StoredContext } from "../../context";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function FoodList() {
   const [food_list, setList] = useState([]);
   const { currRestaurant } = useContext(StoredContext);
 
   async function getFoodList() {
-    const responses = await fetch("/api/food-list-admin", {
+    const responses = await fetch(`${VITE_API_BASE_URL}/food-list-admin`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(currRestaurant),
@@ -22,7 +23,7 @@ export default function FoodList() {
   }, []);
 
   async function deleteDish(dishId) {
-    const response = await fetch("/api/delete-dish", {
+    const response = await fetch(`${VITE_API_BASE_URL}/delete-dish`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ dishId }),

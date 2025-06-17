@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./orders.css";
 import { StoredContext } from "../../context";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);
@@ -14,17 +15,20 @@ export default function Orders() {
     //   )
     // )
     //   return;
-    const response = await fetch("/api/change-order-status", {
+    const response = await fetch(`${VITE_API_BASE_URL}/change-order-status`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ order_id, currRestaurant, new_status }),
     });
 
     if (new_status === "Delivered") {
-      const deleteResponse = await fetch("/api/delete-completed-orders", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      });
+      const deleteResponse = await fetch(
+        `${VITE_API_BASE_URL}/delete-completed-orders`,
+        {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
   }
 
@@ -84,11 +88,14 @@ export default function Orders() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const response = await fetch("/api/get-restaurant-order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ currRestaurant }),
-        });
+        const response = await fetch(
+          `${VITE_API_BASE_URL}/get-restaurant-order`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ currRestaurant }),
+          }
+        );
         if (response.ok) {
           const result = await response.json();
           setOrders(result.orders);

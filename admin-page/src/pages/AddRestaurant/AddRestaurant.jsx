@@ -3,6 +3,7 @@ import { assets } from "../../assets/assets";
 import "./addRestaurant.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function AddRestaurant() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function AddRestaurant() {
     formData.append("openTime", restaurantData.openTime);
     formData.append("closeTime", restaurantData.closeTime);
 
-    await fetch("/api/restaurant-list", {
+    await fetch(`${VITE_API_BASE_URL}/restaurant-list`, {
       method: "POST",
       body: formData,
     });

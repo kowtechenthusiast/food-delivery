@@ -3,6 +3,7 @@ import { assets } from "../../assets/assets";
 import "./additem.css";
 import { StoredContext } from "../../context";
 import { toast } from "react-toastify";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function AddItem() {
   const { currRestaurant } = useContext(StoredContext);
@@ -32,7 +33,7 @@ export default function AddItem() {
     formData.append("description", foodData.description);
     formData.append("category", foodData.category);
 
-    const response = await fetch("/api/food-list", {
+    const response = await fetch(`${VITE_API_BASE_URL}/food-list`, {
       method: "POST",
       body: formData,
     });

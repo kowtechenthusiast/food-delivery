@@ -13,6 +13,10 @@ import stripe
 import logging
 from functools import wraps
 from base64 import b64encode
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 @app.route('/')
@@ -149,7 +153,7 @@ def foodList():
     if request.method == 'POST':
         name=request.form.get('name')
         image=request.files.get('image')
-        restaurant_name=request.files.get('restaurant_name')
+        restaurant_name=request.form.get('restaurant_name')
         price=request.form.get('price')
         description=request.form.get('description')
         category=request.form.get('category')
@@ -287,8 +291,8 @@ def create_checkout_session():
             payment_method_types=['card'],
             line_items=line_items,
             mode='payment',
-            success_url='http://localhost:3000',
-            cancel_url='http://localhost:3000',
+            success_url=os.getenv('CLIENT_HOST'),
+            cancel_url=os.getenv('CLIENT_HOST'),
             metadata={'order_id': order_id},
             shipping_options=shipping_options,
             automatic_tax={'enabled': tax_enabled},
@@ -468,7 +472,7 @@ def stripe_webhook():
     sig_header = request.headers.get('Stripe-Signature')
     
     try:
-        event = stripe.Webhook.construct_event(payload, sig_header, 'whsec_XXXXXXXXXXXXXXXXXXXXXXX')
+        event = stripe.Webhook.construct_event(payload, sig_header, os.getenv('STRIPE_WEBHOOK_SECRET'))
 
     except ValueError as e:
         return 'Invalid payload', 400

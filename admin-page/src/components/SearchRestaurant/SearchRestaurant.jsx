@@ -54,9 +54,14 @@ const SearchRestaurant = () => {
       <div
         className="search-submit"
         onClick={() => {
-          setCurrent(query);
-          setQuery("");
-          toast.info(`${query} is Active now`);
+          if(restaurantNames.includes(query)){
+            setCurrent(query);
+            setQuery("");
+            toast.info(`${query} is Active now`);
+          } else{
+            setQuery("");
+            toast.error(`${query} is not found`);
+          }
         }}
       >
         &#8981;

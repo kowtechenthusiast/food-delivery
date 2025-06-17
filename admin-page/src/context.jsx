@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const StoredContext = createContext(null);
 
@@ -11,11 +12,13 @@ const ContextProvider = (props) => {
   });
   useEffect(() => {
     async function getList() {
-      const response = await fetch("/api/restaurant-list", {
+      const response = await fetch(`${VITE_API_BASE_URL}/restaurant-list`, {
         method: "GET",
       });
       const data = await response.json();
       setList(data.restaurant_list);
+      console.log("*********************************", restaurantList);
+
       setNameList(data.restaurant_names);
     }
     getList();
