@@ -245,7 +245,6 @@ def proxy_ipapi():
         return jsonify({"error": "Unable to fetch location data"}), 500
 
 @app.route('/api/create-checkout-session', methods=['POST'])
-@login_required
 def create_checkout_session():
     try:
         data = request.json

@@ -49,10 +49,13 @@ export default function Placeorder() {
           order_id: order_id,
           delivery_charge: delivery_charge,
         }),
+        credentials: "include",
       }
     );
+    console.log(cartItem, order_id, delivery_charge);
 
     const session = await response.json();
+    console.log("Session data:", session);
 
     // Redirect to Stripe Checkout
     const stripe = await stripePromise;
