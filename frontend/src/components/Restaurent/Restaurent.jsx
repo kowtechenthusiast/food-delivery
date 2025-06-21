@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./restaurent.css";
 import { Link, useLocation } from "react-router-dom";
 import { StoredContext } from "../../context";
+import Loading from "../Loading/Loading";
 const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Restaurent() {
@@ -10,6 +11,7 @@ function Restaurent() {
 
   const [restaurantData, setRestaurantData] = useState([]);
   const [filter, setFilter] = useState("All");
+  const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
 
@@ -30,6 +32,7 @@ function Restaurent() {
 
       const data = await response.json();
       setRestaurantData(data.restaurant_list);
+      setIsLoading(false);
     }
     async function getFilteredData() {
       const response = await fetch(`${VITE_API_BASE_URL}/filter-rest-list`, {
@@ -101,6 +104,9 @@ function Restaurent() {
       </Link>
     );
   });
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="restaurant-page">
       <h2 className="restaurant-title" id="restaurant">

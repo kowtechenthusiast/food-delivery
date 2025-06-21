@@ -4,13 +4,14 @@ import DisplayDish from "../../components/DisplayDish/DisplayDish";
 import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import { StoredContext } from "../../context";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 
 function RestaurantMenu() {
   const [category, setCategory] = useState("All");
   const { isListLoading, restList, curr_rest } = useContext(StoredContext);
   const { id } = useParams();
 
-  if (isListLoading) return <LoadingDots />;
+  if (isListLoading) return <Loading />;
   else
     return (
       <div className="rest-menu-page">
@@ -20,15 +21,5 @@ function RestaurantMenu() {
       </div>
     );
 }
-
-const LoadingDots = () => {
-  return (
-    <div className="loading-container">
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
-    </div>
-  );
-};
 
 export default RestaurantMenu;

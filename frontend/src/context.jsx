@@ -66,13 +66,14 @@ const ContextProvider = (props) => {
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/logout`, {
         method: "POST",
-        credentials: "include", // Ensures cookies (session) are sent with the request
+        credentials: "include",
       });
 
       if (response.ok) {
-        setUser(null); // Clear the user data from state
+        setUser(null);
         setAuthentication(false);
         toast.success("You have logged out successfully!");
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error during logout", error);
