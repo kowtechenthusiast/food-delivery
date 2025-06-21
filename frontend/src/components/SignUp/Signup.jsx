@@ -14,6 +14,7 @@ export default function Signup({ setShow }) {
     user,
     setUser,
   } = useContext(StoredContext);
+  const [isPending, setPending] = useState(false);
   const [signupData, setData] = useState({
     name: "",
     email: "",
@@ -30,7 +31,7 @@ export default function Signup({ setShow }) {
 
   const fetchUser = async (e) => {
     e.preventDefault();
-
+    isPending(true);
     const url = userState === "newuser" ? "signup" : "login";
     const response = await fetch(`${VITE_API_BASE_URL}/${url}`, {
       method: "POST",
@@ -59,6 +60,7 @@ export default function Signup({ setShow }) {
     } else {
       toast.warning("Invalid email or password");
     }
+    setPending(false);
   };
 
   return (
@@ -101,20 +103,23 @@ export default function Signup({ setShow }) {
             onClick={() => {
               if (isAuthenticated === true) setShow(false);
             }}
+            disabled={isPending}
           >
             {userState === "newuser" ? "Create an account" : "Log in"}
           </button>
         </div>
 
-        <div className="signup-condition">
-          <input type="checkbox" required />
-          <p>By continuing, I agree to the terms of use & privacy policy</p>
-        </div>
         {userState === "newuser" ? (
-          <p>
-            Already have an account?{" "}
-            <span onClick={() => setUserState("registered")}>Login here</span>
-          </p>
+          <>
+            <div className="signup-condition">
+              <input type="checkbox" required />
+              <p>By continuing, I agree to the terms of use & privacy policy</p>
+            </div>
+            <p>
+              Already have an account?{" "}
+              <span onClick={() => setUserState("registered")}>Login here</span>
+            </p>
+          </>
         ) : (
           <p>
             Create a new account?{" "}
