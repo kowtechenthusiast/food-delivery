@@ -31,7 +31,7 @@ export default function Signup({ setShow }) {
 
   const fetchUser = async (e) => {
     e.preventDefault();
-    isPending(true);
+    setPending(true);
     const url = userState === "newuser" ? "signup" : "login";
     const response = await fetch(`${VITE_API_BASE_URL}/${url}`, {
       method: "POST",
