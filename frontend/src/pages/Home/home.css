@@ -1,9 +1,7 @@
 .home {
   background-color: #ffffff;
 }
-
 .about-us-home {
-  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +12,9 @@
     #f8f8ff 51.03%
   );
   margin-top: 20vh;
+  padding: 5vh 5vw;
+  gap: 2vw;
+  flex-wrap: nowrap;
 }
 
 .about-us-home p {
@@ -31,7 +32,11 @@
 }
 
 .about-us-home img {
-  height: 100%;
+  height: auto;
+  max-height: 400px;
+  width: auto;
+  max-width: 20%;
+  object-fit: contain;
 }
 
 .sustainable-block {
@@ -92,25 +97,19 @@
 
 @media (max-width: 1024px) {
   .about-us-home {
-    flex-direction: column;
-    height: auto;
-    padding: 5vh 5vw;
-    text-align: center;
-    gap: 5vh;
+    padding: 5vh 3vw;
   }
 
   .about-us-home img {
-    height: auto;
-    width: 80%;
-    max-height: 250px;
-    object-fit: contain;
+    max-width: 18%;
+    max-height: 200px;
   }
 
   .about-us-home p {
-    width: 90%;
+    width: 60%;
     font-size: 1.1rem;
     line-height: 2rem;
-    text-indent: 0;
+    text-indent: 1.5rem;
   }
 
   .sustainable-block {
@@ -149,10 +148,41 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .about-us-home {
+    gap: 10px;
+  }
+
+  .about-us-home img {
+    max-width: 17%;
+    max-height: 150px;
+  }
+
   .about-us-home p {
     font-size: 1rem;
+    width: 66%;
     line-height: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us-home {
+    padding: 3vh 2vw;
+    gap: 10px;
+  }
+
+  .about-us-home img {
+    max-width: 16%;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .about-us-home p {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+    width: 68%;
+    text-indent: 1rem;
+    text-align: justify;
   }
 
   .sustainable-block h3 {
@@ -174,5 +204,27 @@
 
   .image-row img {
     width: 55px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-us-home {
+    padding: 2vh 3vw;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .about-us-home img {
+    max-width: 18%;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .about-us-home p {
+    font-size: 0.9rem;
+    width: 64%;
+    text-indent: 1rem;
+    line-height: 1.5rem;
+    text-align: justify;
   }
 }

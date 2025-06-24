@@ -37,11 +37,12 @@
 }
 
 .hero-nav-right {
-  display: flex;
-  justify-content: space-between;
-  gap: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
   align-items: center;
-  margin-right: 2vw;
+  width: 100%;
 }
 
 .hero-nav-right button {
@@ -182,7 +183,7 @@ hr {
 @media (max-width: 768px) {
   .hero-navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
   }
 
@@ -191,10 +192,25 @@ hr {
   }
 
   .hero-nav-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     width: 100%;
+  }
+
+  .rest-page,
+  .rest-add {
+    font-size: 1.2rem;
+  }
+
+  .hero-nav-right button {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+
+  .navbar-cart svg {
+    width: 35px;
   }
 
   .hero-search {
@@ -226,7 +242,6 @@ hr {
     text-align: center;
   }
 }
-
 @media (max-width: 480px) {
   .hero-navbar {
     margin: 0 3%;
@@ -239,9 +254,23 @@ hr {
     gap: 10px;
   }
 
+  .hero-nav-right {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .rest-page,
+  .rest-add {
+    font-size: 1rem;
+  }
+
   .hero-nav-right button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .navbar-cart svg {
+    width: 30px;
   }
 
   .hero-profile-block {
