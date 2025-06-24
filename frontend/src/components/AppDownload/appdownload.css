@@ -47,3 +47,59 @@
   width: 50%;
   height: 100%;
 }
+
+@media (max-width: 1024px) {
+  .app-download {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 4vh;
+    text-align: center;
+  }
+
+  .app-download h3 {
+    font-size: 2.5rem;
+  }
+
+  .app-download p {
+    font-size: 1.1rem;
+  }
+
+  .store-logo {
+    justify-content: center;
+    gap: 8vw;
+  }
+
+  .app-right {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-download {
+    padding: 30px 20px;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+
+  .app-download h3 {
+    font-size: 2rem;
+  }
+
+  .app-download p {
+    font-size: 1rem;
+  }
+
+  .store-logo {
+    gap: 5vw;
+    flex-wrap: wrap;
+  }
+
+  .store-logo img {
+    width: 130px;
+  }
+
+  .app-right {
+    width: 100%;
+  }
+}
