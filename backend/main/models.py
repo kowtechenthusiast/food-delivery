@@ -72,7 +72,7 @@ class Orders(db.Model):
     order_id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(100))
     email=db.Column(db.String(100))
-    phno=db.Column(db.Integer) 
+    phno=db.Column(db.String(50)) 
     price=db.Column(db.Integer) 
     address=db.Column(db.String(200))
     status = db.Column(db.String(100))
