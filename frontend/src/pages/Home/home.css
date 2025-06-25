@@ -1,7 +1,9 @@
 .home {
   background-color: #ffffff;
 }
+
 .about-us-home {
+  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,9 +14,6 @@
     #f8f8ff 51.03%
   );
   margin-top: 20vh;
-  padding: 5vh 5vw;
-  gap: 2vw;
-  flex-wrap: nowrap;
 }
 
 .about-us-home p {
@@ -32,11 +31,7 @@
 }
 
 .about-us-home img {
-  height: auto;
-  max-height: 400px;
-  width: auto;
-  max-width: 20%;
-  object-fit: contain;
+  height: 100%;
 }
 
 .sustainable-block {
@@ -93,138 +88,4 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-
-@media (max-width: 1024px) {
-  .about-us-home {
-    padding: 5vh 3vw;
-  }
-
-  .about-us-home img {
-    max-width: 18%;
-    max-height: 200px;
-  }
-
-  .about-us-home p {
-    width: 60%;
-    font-size: 1.1rem;
-    line-height: 2rem;
-    text-indent: 1.5rem;
-  }
-
-  .sustainable-block {
-    height: auto;
-    padding: 8vh 5vw;
-    margin-bottom: 30vh;
-  }
-
-  .sustainable-block h3 {
-    width: 90%;
-    font-size: 2.5rem;
-  }
-
-  .sustainable-block p {
-    width: 90%;
-    font-size: 1.1rem;
-    line-height: 2rem;
-  }
-
-  .sustainable-inner-block {
-    padding: 40px 40px;
-    bottom: -80px;
-  }
-
-  .sustainable-block h5 {
-    font-size: 1.6rem;
-  }
-
-  .image-row {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .image-row img {
-    width: 70px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-us-home {
-    gap: 10px;
-  }
-
-  .about-us-home img {
-    max-width: 17%;
-    max-height: 150px;
-  }
-
-  .about-us-home p {
-    font-size: 1rem;
-    width: 66%;
-    line-height: 1.8rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-us-home {
-    padding: 3vh 2vw;
-    gap: 10px;
-  }
-
-  .about-us-home img {
-    max-width: 16%;
-    max-height: 100px;
-    object-fit: contain;
-  }
-
-  .about-us-home p {
-    font-size: 0.95rem;
-    line-height: 1.6rem;
-    width: 68%;
-    text-indent: 1rem;
-    text-align: justify;
-  }
-
-  .sustainable-block h3 {
-    font-size: 2rem;
-  }
-
-  .sustainable-block p {
-    font-size: 1rem;
-  }
-
-  .sustainable-inner-block {
-    padding: 30px 20px;
-    width: 95%;
-  }
-
-  .sustainable-block h5 {
-    font-size: 1.3rem;
-  }
-
-  .image-row img {
-    width: 55px;
-  }
-}
-
-@media (max-width: 500px) {
-  .about-us-home {
-    padding: 2vh 3vw;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .about-us-home img {
-    max-width: 18%;
-    max-height: 100px;
-    object-fit: contain;
-  }
-
-  .about-us-home p {
-    font-size: 0.9rem;
-    width: 64%;
-    text-indent: 1rem;
-    line-height: 1.5rem;
-    text-align: justify;
-  }
 }

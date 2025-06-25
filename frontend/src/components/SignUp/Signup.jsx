@@ -32,35 +32,42 @@ export default function Signup({ setShow }) {
   const fetchUser = async (e) => {
     e.preventDefault();
     setPending(true);
+
     const url = userState === "newuser" ? "signup" : "login";
-    const response = await fetch(`${VITE_API_BASE_URL}/${url}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(signupData),
-      credentials: "include",
-    });
 
-    const result = await response.json();
+    try {
+      const response = await fetch(`${VITE_API_BASE_URL}/${url}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(signupData),
+        credentials: "include",
+      });
 
-    if (response.ok) {
-      if (userState === "newuser") {
-        setUserState("registered");
-        toast.success("Account created successfully!");
+      const result = await response.json();
+
+      if (response.ok) {
+        if (userState === "newuser") {
+          setUserState("registered");
+          toast.success("Account created successfully!");
+        } else {
+          const userResponse = await fetch(`${VITE_API_BASE_URL}/get-user`, {
+            method: "GET",
+            credentials: "include",
+          });
+          const userData = await userResponse.json();
+          setUser(userData);
+          toast.success(`Welcome back ${userData.name || signupData.name}`);
+          setAuthentication(true);
+          setShow(false);
+        }
       } else {
-        const userResponse = await fetch(`${VITE_API_BASE_URL}/get-user`, {
-          method: "GET",
-          credentials: "include",
-        });
-        const userData = await userResponse.json();
-        setUser(userData);
-        toast.success(`Welcome back ${signupData.name}`);
-        setAuthentication(true);
-        setShow(false);
+        toast.warning("Invalid email or password");
       }
-    } else {
-      toast.warning("Invalid email or password");
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setPending(false);
     }
-    setPending(false);
   };
 
   return (
@@ -98,13 +105,7 @@ export default function Signup({ setShow }) {
             onChange={handleInput}
             required
           />
-          <button
-            type="submit"
-            onClick={() => {
-              if (isAuthenticated === true) setShow(false);
-            }}
-            disabled={isPending}
-          >
+          <button type="submit" disabled={isPending}>
             {userState === "newuser" ? "Create an account" : "Log in"}
           </button>
         </div>
