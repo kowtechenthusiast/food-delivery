@@ -6,7 +6,11 @@
 }
 
 .footer-logo {
-  width: 150px;
+  width: 130px;
+}
+
+.footer-disc {
+  font-size: 0.9rem;
 }
 
 .footer ul {
@@ -15,8 +19,13 @@
   text-indent: 5px;
 }
 
+.footer ul li {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
 .footer h2 {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   margin-bottom: 15px;
 }
 
@@ -40,6 +49,7 @@
 }
 
 .copyright {
+  font-size: 0.9rem;
   text-align: center;
   margin-top: 5vh;
 }

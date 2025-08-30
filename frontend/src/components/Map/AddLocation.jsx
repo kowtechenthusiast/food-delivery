@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useState, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import ReactMapGL, {
   GeolocateControl,
@@ -95,8 +96,8 @@ const AddLocation = ({ onLocationChange }) => {
   return (
     <Box
       sx={{
-        height: 610,
-        width: 830,
+        height: 480,
+        width: 600,
         position: "relative",
       }}
     >

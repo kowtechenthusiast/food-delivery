@@ -1,4 +1,3 @@
-import React from "react";
 import "./footer.css";
 import { assets } from "../../assets/assets";
 
@@ -18,13 +17,13 @@ export default function Footer() {
           </div>
           <div className="social-icon">
             <a href="https://www.facebook.com/" target="blank">
-              <img src={assets.facebook_icon} alt="" />
+              <img src={assets.facebook_icon} alt="" width={35}/>
             </a>
             <a href="https://www.twitter.com" target="blank">
-              <img src={assets.twitter_icon} alt="" />
+              <img src={assets.twitter_icon} alt="" width={35}/>
             </a>
             <a href="https://www.linkedin.com" target="blank">
-              <img src={assets.linkedin_icon} alt="" />
+              <img src={assets.linkedin_icon} alt="" width={35}/>
             </a>
           </div>
         </div>

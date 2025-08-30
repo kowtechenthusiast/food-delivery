@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./appdownload.css";
 import { assets } from "../../assets/assets";
 import { useLocation } from "react-router-dom";

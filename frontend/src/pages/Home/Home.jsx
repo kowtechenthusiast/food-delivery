@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
 import "./home.css";
 import Hero from "../../components/Hero/Hero";
 import AppDownload from "../../components/AppDownload/AppDownload";
@@ -27,7 +27,7 @@ const Home = ({ setShow }) => {
           Welcome to <span>Swift Go</span>, the ultimate destination for all
           your food cravings! At Swift Go, we redefine the food delivery
           experience by offering not just convenience but also a rich variety of
-          delicious dishes tailored to your tastes. Whether you're in the mood
+          delicious dishes tailored to your tastes. Whether you&apos;re in the mood
           for a hearty meal, a light snack, or something truly unique, our
           seamless app design ensures you can browse, filter, and choose your
           favorite dishes effortlessly. With features like personalized

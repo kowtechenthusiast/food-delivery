@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./searchRest.css";
-import { toast } from "react-toastify";
 import { StoredContext } from "../../context";
 import { useNavigate } from "react-router-dom";
 

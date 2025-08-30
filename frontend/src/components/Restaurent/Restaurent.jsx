@@ -91,7 +91,7 @@ function Restaurent() {
                 <span>{item.category == "veg" ? "Veg" : "Non-veg"}</span>
               </div>
               <p className="delivery-charge">
-                Delivery Charge: ₹{item.delivery_charge}
+                Delivery Charge: ${item.delivery_charge}
               </p>
             </div>
           </div>

@@ -11,13 +11,13 @@
 }
 
 .app-download h3 {
-  font-size: 3.3rem;
+  font-size: 2.7rem;
   color: white;
   margin-bottom: 1rem;
 }
 
 .app-download p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: rgb(118, 117, 117);
 }
 
@@ -35,6 +35,7 @@
 }
 
 .store-logo img {
+  width: 150px;
   transition: 0.4s;
   cursor: pointer;
 }

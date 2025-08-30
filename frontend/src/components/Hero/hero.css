@@ -33,7 +33,7 @@
 .rest-add,
 .rest-page {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .hero-nav-right {
@@ -73,8 +73,12 @@
   animation: fadeIn 2.5s;
 }
 
+.hero-text .hero-title{
+  font-size: 3rem;
+}
+
 .company-name {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-style: italic;
@@ -113,9 +117,10 @@
   background-color: white;
 }
 
-.hero-text h2 {
-  font-size: 3.8rem;
+.hero .hero-text h2 {
+  font-size: 2.8rem;
   font-weight: 250;
+  text-align: center;
 }
 
 .hero-text p {
@@ -145,7 +150,7 @@
 }
 hr {
   border: none; /* Removes the default border */
-  height: 1px; /* Sets the height */
+  height: 0.5px; /* Sets the height */
   background-color: #989696; /* Sets the color */
   margin: 3px 0;
 }
@@ -162,13 +167,13 @@ hr {
 }
 
 .hero-profile-block button {
-  width: 90%;
+  width: 80%;
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 1.1rem;
   cursor: pointer;
   color: #000;
+  font-size: 1rem;
 }
 
 .hero-profile-block .hero-profile-nav:hover {
