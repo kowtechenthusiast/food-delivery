@@ -7,8 +7,20 @@
 
 #menu-pape-title {
   margin-top: 30px;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   font-family: "Playwrite IN", serif;
   color: tomato;
+}
+
+@media (max-width: 768px) {
+  .rest-menu-page {
+    min-width: 193vw;
+    padding: 5vw;
+    margin: 0 auto;
+  }
+  #menu-pape-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 }

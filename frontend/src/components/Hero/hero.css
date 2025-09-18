@@ -73,7 +73,7 @@
   animation: fadeIn 2.5s;
 }
 
-.hero-text .hero-title{
+.hero-text .hero-title {
   font-size: 3rem;
 }
 
@@ -185,26 +185,15 @@ hr {
     color: rgb(98, 24, 11);
 } */
 
-@media (max-width: 900px) {
-  .hero-text {
-    bottom: 4vh;
-  }
-}
-
-@media (max-width: 700px) {
-  .hero p {
-    display: none;
+@media (max-width: 768px) {
+  .hero {
+    min-width: 193vw;
+    min-height: 100vh;
   }
   .hero-text {
-    bottom: 4vh;
+    margin-top: 10%;
   }
-}
-
-@media (max-width: 500px) {
-  .hero button {
-    display: none;
-  }
-  .hero-text {
-    bottom: 2vh;
+  .hero-profile-block {
+    right: 50px;
   }
 }

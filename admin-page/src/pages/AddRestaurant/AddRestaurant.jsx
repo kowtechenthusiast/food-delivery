@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { assets } from "../../assets/assets";
 import "./addRestaurant.css";
 import { useNavigate } from "react-router-dom";
@@ -44,7 +44,7 @@ export default function AddRestaurant() {
   };
 
   return (
-    <div>
+    <div className="add-restaurant-container">
       <form onSubmit={handleSubmit}>
         {/* Image Upload */}
         <div className="image-upload">

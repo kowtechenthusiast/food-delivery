@@ -1,5 +1,5 @@
 import { assets } from "../../assets/assets";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./profile.css";
 import { StoredContext } from "../../context";
 import AddLocation from "../../components/Map/AddLocation";

@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
 import "./explore.css";
 // import { menu_list } from "../../assets/assets";
 import { StoredContext } from "../../context";

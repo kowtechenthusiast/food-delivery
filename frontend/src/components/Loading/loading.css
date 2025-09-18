@@ -32,3 +32,15 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 768px) {
+  .loading-container {
+    margin-top: 30vh;
+    min-width: 193vw;
+    min-height: 40vh;
+  }
+  .dot {
+    width: 20px;
+    height: 20px;
+  }
+}

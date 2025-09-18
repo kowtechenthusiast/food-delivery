@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./placeorder.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { StoredContext } from "../../context";
@@ -12,7 +12,6 @@ export default function Placeorder() {
     getTotalAmount,
     cartItem,
     user,
-    setDelivery_charge,
     delivery_charge,
   } = useContext(StoredContext);
   const stripePromise = loadStripe(VITE_STRIPE_PRIVATE_KEY);

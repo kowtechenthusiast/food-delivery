@@ -54,8 +54,10 @@
   color: black;
 }
 
-@media (max-width: 700px) {
-  .menu-disc {
-    display: none;
+@media (max-width: 768px) {
+  .explore-menu {
+    min-width: 193vw;
+    padding: 5vw;
+    margin: 0 auto;
   }
 }

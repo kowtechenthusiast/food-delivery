@@ -1,4 +1,6 @@
-import React, { useContext, useState } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useContext, useState } from "react";
 import "./signup.css";
 import { assets } from "../../assets/assets";
 import { StoredContext } from "../../context";
@@ -9,9 +11,7 @@ export default function Signup({ setShow }) {
   const {
     userState,
     setUserState,
-    isAuthenticated,
     setAuthentication,
-    user,
     setUser,
   } = useContext(StoredContext);
   const [isPending, setPending] = useState(false);
@@ -43,8 +43,6 @@ export default function Signup({ setShow }) {
         credentials: "include",
       });
 
-      const result = await response.json();
-
       if (response.ok) {
         if (userState === "newuser") {
           setUserState("registered");
@@ -63,7 +61,7 @@ export default function Signup({ setShow }) {
       } else {
         toast.warning("Invalid email or password");
       }
-    } catch (error) {
+    } catch (e) {
       toast.error("Something went wrong. Please try again.");
     } finally {
       setPending(false);

@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
 import "./display.css";
-import { useParams } from "react-router-dom";
 import FoodItem from "../FoodItem/FoodItem";
 import { StoredContext } from "../../context";
 import { useLocation } from "react-router-dom";

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import { StoredContext } from "../../context";
@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <Link to="/">
-        <img src="download__7_-removebg-preview.png" alt="Logo" width="120px" />
+        <img src="download__7_-removebg-preview.png" alt="Logo" width="80px" />
       </Link>
 
       {currRestaurant ? (

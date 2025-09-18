@@ -249,3 +249,9 @@
   padding: 5px 10px;
   background-color: #007bff;
 }
+
+@media (max-width: 768px) {
+  .profile-container {
+    min-width: 193vw;
+  }
+}

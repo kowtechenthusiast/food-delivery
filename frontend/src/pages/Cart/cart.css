@@ -1,4 +1,4 @@
-.cart-page{
+.cart-page {
   max-width: 80%;
   margin: 0 auto;
 }
@@ -15,10 +15,10 @@
 
 .cart-header {
   background-color: #f8f8f8;
-  
 }
 
-.cart-header-cell, .cart-cell {
+.cart-header-cell,
+.cart-cell {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: center;
@@ -51,7 +51,7 @@
   font-weight: bold;
 }
 
-.cart-restoName{
+.cart-restoName {
   font-size: 0.7rem;
   color: rgb(56, 55, 55);
   margin-top: 0.7rem;
@@ -107,7 +107,7 @@
   margin-bottom: 15px;
 }
 
-.promo-input input{
+.promo-input input {
   width: 25vw;
   height: 40px;
   background-color: rgb(234, 234, 234);
@@ -118,19 +118,19 @@
   font-size: 1.1rem;
 }
 
-.promo-input button{
+.promo-input button {
   height: 40px;
   width: 9vw;
   background-color: rgba(0, 0, 0, 0.801);
   color: white;
   border: none;
-  border-radius:0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
   cursor: pointer;
   font-size: 1.1rem;
   transition: all 0.3s;
 }
 
-.promo-input button:hover{
+.promo-input button:hover {
   background-color: black;
 }
 
@@ -140,4 +140,17 @@
   font-size: 3rem;
   display: grid;
   place-content: center;
+}
+
+@media (max-width: 768px) {
+  .no-item {
+    margin-top: 30vh;
+    min-width: 193vw;
+    min-height: 70vh;
+  }
+  .cart-page {
+    margin-top: 30vh;
+    min-width: 193vw;
+    min-height: 40vh;
+  }
 }

@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./searchrestaurant.css";
 import { StoredContext } from "../../context";
 import { toast } from "react-toastify";
 
 const SearchRestaurant = () => {
-  const { restaurantNames, setCurrent, currRestaurant } =
+  const { restaurantNames, setCurrent } =
     useContext(StoredContext);
   const [query, setQuery] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);

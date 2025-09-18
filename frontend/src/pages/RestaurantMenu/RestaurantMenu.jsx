@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import "./restaurantMenu.css";
 import DisplayDish from "../../components/DisplayDish/DisplayDish";
 import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
@@ -8,7 +8,7 @@ import Loading from "../../components/Loading/Loading";
 
 function RestaurantMenu() {
   const [category, setCategory] = useState("All");
-  const { isListLoading, restList, curr_rest } = useContext(StoredContext);
+  const { isListLoading, restList } = useContext(StoredContext);
   const { id } = useParams();
 
   if (isListLoading) return <Loading />;

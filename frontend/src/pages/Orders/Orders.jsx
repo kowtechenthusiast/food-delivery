@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./orders.css";
 import { StoredContext } from "../../context";
 import Loading from "../../components/Loading/Loading";
@@ -13,13 +13,10 @@ export default function Orders() {
     const deletePendingOrdersAndFetch = async () => {
       try {
         // Delete pending orders
-        const deleteResponse = await fetch(
-          `${VITE_API_BASE_URL}/delete-pending-orders`,
-          {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+        await fetch(`${VITE_API_BASE_URL}/delete-pending-orders`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        });
 
         // if (!deleteResponse.ok) {
         //     const errorData = await deleteResponse.json();
